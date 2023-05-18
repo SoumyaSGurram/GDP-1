@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link href="https://unpkg.com/tailwindcss@^2.2.7/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        /* Custom Styles */
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #F9F3EB;
+            background-image: linear-gradient(to bottom, #3182CE, #41416F);
+        }
+
+        /* Login Box */
+        .login-box {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 40px;
+            background-color: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-top: 50px;
+        }
+
+        .login-box h2 {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #41416F;
+        }
+
+        .login-box input[type="text"],
+        .login-box input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            color: #555;
+        }
+
+        .login-box input[type="text"]::placeholder,
+        .login-box input[type="password"]::placeholder {
+            color: #999;
+        }
+
+        .login-box button {
+            background-color: #3182CE;
+            color: #fff;
+            padding: 10px 16px;
+            border-radius: 4px;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+        }
+
+        .login-box button:hover {
+            background-color: #2563AD;
+        }
+
+        .login-box .error-message {
+            color: red;
+            margin-top: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+
+
+<body>
+  <div class="login-box">
+    <h2>Login</h2>
+    <form id="login-form">
+      <input type="text" placeholder="Username" id="username" required value="example@example.com">
+      <input type="password" placeholder="Password" id="password" required value="pswd1234">
+      <button type="submit">Login</button>
+    </form>
+  </div>
+
+  <script>
+    // JavaScript code to handle the login form submission
+    document.getElementById("login-form").addEventListener("submit", function (event) {
+      event.preventDefault(); // Prevent form submission
+
+      // Retrieve the entered username and password
+      var username = document.getElementById("username").value;
+      var password = document.getElementById("password").value;
+
+      // Compare the entered username and password with the static login details
+      if (username === "example@example.com" && password === "pswd1234") {
+        // Redirect to the dashboard or desired page on successful login
+        window.location.href = "dashboard.html";
+      } else {
+        // Display an error message for incorrect credentials
+        alert("Invalid username or password. Please try again.");
+      }
+    });
+  </script>
+</body>
+</html>
